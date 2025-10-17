@@ -23,7 +23,7 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <div class="container mt-5">
       <div class="row">
         <div class="col-md-6 col-12 mx-auto">
-          <h3>Create a user</h3>
+          <h1 style="color: rgb(26, 62, 163)">Create a user</h1>
           <hr />
           <form:form
             method="post"
@@ -58,9 +58,7 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
               <label class="form-label">Address:</label>
               <form:input type="text" class="form-control" path="address" />
             </div>
-
             <button type="submit" class="btn btn-primary">Create</button><br />
-            <a href="https://code.ptit.edu.vn" target="_blank">code</a>
           </form:form>
         </div>
       </div>

@@ -5,7 +5,7 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Create User</title>
+    <title>Delete User ${id}</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -22,43 +22,29 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
   <body>
     <div class="container mt-5">
       <div class="row">
-        <div class="col-md-6 col-12 mx-auto">
-          <h3>Update a user</h3>
+        <div class="col-12 mx-auto">
+          <h3>Delete a user with id = ${id}</h3>
           <hr />
+          <div class="alert alert-danger">
+            Are you sure you want to delete this user?
+          </div>
+
           <form:form
             method="post"
-            action="/admin/user/update"
             modelAttribute="newUser"
+            action="/admin/user/delete"
           >
             <div class="mb-3" style="display: none">
               <label class="form-label">ID:</label>
-              <form:input type="text" class="form-control" path="id" />
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Email:</label>
               <form:input
-                type="email"
+                path="id"
+                type="text"
                 class="form-control"
-                path="email"
-                disabled="true"
+                value="${id}"
               />
             </div>
-            <div class="mb-3">
-              <label class="form-label">Phone number:</label>
-              <form:input type="text" class="form-control" path="phone" />
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Full Name:</label>
-              <form:input type="text" class="form-control" path="fullName" />
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Address:</label>
-              <form:input type="text" class="form-control" path="address" />
-            </div>
-
-            <button type="submit" class="btn btn-warning">Update</button><br />
+            <button type="submit" class="btn btn-danger">Confirm</button>
+            <a href="/admin/user" class="btn btn-secondary ms-2">Cancel</a>
           </form:form>
         </div>
       </div>
