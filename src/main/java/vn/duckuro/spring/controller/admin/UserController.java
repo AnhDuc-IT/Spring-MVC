@@ -1,4 +1,4 @@
-package vn.duckuro.spring.controller;
+package vn.duckuro.spring.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,7 +49,7 @@ public class UserController {
     public String displayUsers(Model model, User user) {
         ArrayList<User> arr = this.userService.getAllUsers();
         model.addAttribute("users", arr);
-        return "/admin/user/table-user";
+        return "/admin/user/show";
     }
 
     @RequestMapping("/admin/user/update/{id}")
@@ -76,7 +76,7 @@ public class UserController {
         User user = this.userService.getUserById(id);
         model.addAttribute("id", id);
         model.addAttribute("user", user);
-        return "admin/user/show";
+        return "admin/user/detail";
     }
 
     @GetMapping("admin/user/delete/{id}")
@@ -84,6 +84,7 @@ public class UserController {
         model.addAttribute("id", id);
         User user = new User();
         user.setId(id);
+        model.addAttribute("newUser", user);
         return "/admin/user/delete";
     }
 

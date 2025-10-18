@@ -34,37 +34,25 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
               <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
               <li class="breadcrumb-item active">Users</li>
             </ol>
-
             <div class="container mt-5">
               <div class="row">
                 <div class="col-12 mx-auto">
-                  <h3>Delete a user with id = ${id}</h3>
-                  <hr />
-                  <div class="alert alert-danger">
-                    Are you sure you want to delete this user?
+                  <div class="d-flex justify-content-between">
+                    <h3>User detail with id = ${id}</h3>
                   </div>
-
-                  <form:form
-                    method="post"
-                    modelAttribute="newUser"
-                    action="/admin/user/delete"
-                  >
-                    <div class="mb-3" style="display: none">
-                      <label class="form-label">ID:</label>
-                      <form:input
-                        path="id"
-                        type="text"
-                        class="form-control"
-                        value="${id}"
-                      />
-                    </div>
-                    <button type="submit" class="btn btn-danger">
-                      Confirm
-                    </button>
-                    <a href="/admin/user" class="btn btn-secondary ms-2"
-                      >Cancel</a
-                    >
-                  </form:form>
+                  <hr />
+                  <div class="card" style="width: 60%">
+                    <div class="card-header">User information</div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">ID: ${user.id}</li>
+                      <li class="list-group-item">Email: ${user.email}</li>
+                      <li class="list-group-item">
+                        FullName: ${user.fullName}
+                      </li>
+                      <li class="list-group-item">Address: ${user.address}</li>
+                    </ul>
+                  </div>
+                  <a href="/admin/user" class="btn btn-success">Back</a>
                 </div>
               </div>
             </div>
