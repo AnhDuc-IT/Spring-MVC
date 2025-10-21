@@ -4,7 +4,7 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Document</title>
+    <title>Trang chủ - TechStore</title>
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -94,7 +94,7 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <div class="tab-class text-center">
           <div class="row g-4">
             <div class="col-lg-4 text-start">
-              <h1>Our Organic Products</h1>
+              <h1>Sản phẩm nổi bật</h1>
             </div>
             <div class="col-lg-8 text-end">
               <ul class="nav nav-pills d-inline-flex text-center mb-5">

@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <%@
+taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
   <div class="container py-5">
@@ -8,8 +10,8 @@
       <div class="row g-4">
         <div class="col-lg-3">
           <a href="#">
-            <h1 class="text-primary mb-0">Fruitables</h1>
-            <p class="text-secondary mb-0">Fresh products</p>
+            <h1 class="text-primary mb-0">Tech Store</h1>
+            <p class="text-secondary mb-0">Đồ Công Nghệ Chất</p>
           </a>
         </div>
         <div class="col-lg-6">
@@ -57,16 +59,14 @@
     <div class="row g-5">
       <div class="col-lg-3 col-md-6">
         <div class="footer-item">
-          <h4 class="text-light mb-3">Why People Like us!</h4>
+          <h4 class="text-light mb-3">Về Chúng Tôi</h4>
           <p class="mb-4">
-            typesetting, remaining essentially unchanged. It was popularised in
-            the 1960s with the like Aldus PageMaker including of Lorem Ipsum.
+            <ul>
+              <li>Tech Store Là Nhà Phân Phối Ủy Quyền Của Apple</li>
+              <li>Được Thành Lập Vào Năm 2025 Do Chủ Tịch Mai Anh Đức Sáng Lập</li>
+              <li>Chúng Tôi Chuyên Cung Cấp Đồ Chơi Công Nghệ Chất Lượng</li>
+            </ul>
           </p>
-          <a
-            href=""
-            class="btn border-secondary py-2 px-4 rounded-pill text-primary"
-            >Read More</a
-          >
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -113,7 +113,7 @@
       <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
         <span class="text-light"
           ><a href="#"
-            ><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a
+            ><i class="fas fa-copyright text-light me-2"></i>No Copyright</a
           >, All right reserved.</span
         >
       </div>
@@ -122,9 +122,9 @@
         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
         Designed By
-        <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+        <a class="border-bottom" href="https://htmlcodex.com">Mai Anh Đức</a>
         Distributed By
-        <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+        <a class="border-bottom" href="https://themewagon.com">PTIT</a>
       </div>
     </div>
   </div>
