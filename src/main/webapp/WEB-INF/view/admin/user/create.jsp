@@ -54,7 +54,7 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
             <div class="container mt-5">
               <div class="row">
                 <div class="col-md-6 col-12 mx-auto">
-                  <h1 style="color: rgb(26, 62, 163)">Create a user</h1>
+                  <h1 style="color: rgb(23, 59, 158)">Create a user</h1>
                   <hr />
 
                   <form:form
@@ -62,77 +62,69 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
                     action="/admin/user/create"
                     modelAttribute="newUser"
                     class="row"
+                    enctype="multipart/form-data"
                   >
-                    <div class="mb-3">
-                      <div class="mb-3 col-12 col-md-6">
-                        <label class="form-label">Email:</label>
-                        <form:input
-                          type="email"
-                          class="form-control"
-                          path="email"
-                        />
-                      </div>
+                    <div class="mb-3 col-12 col-md-6">
+                      <label class="form-label">Email:</label>
+                      <form:input
+                        type="email"
+                        class="form-control"
+                        path="email"
+                      />
                     </div>
 
-                    <div class="mb-3">
-                      <div class="mb-3 col-12 col-md-6">
-                        <label class="form-label">Password:</label>
-                        <form:input
-                          type="password"
-                          class="form-control"
-                          path="password"
-                        />
-                      </div>
+                    <div class="mb-3 col-12 col-md-6">
+                      <label class="form-label">Password:</label>
+                      <form:input
+                        type="password"
+                        class="form-control"
+                        path="password"
+                      />
                     </div>
 
-                    <div class="mb-3">
-                      <div class="mb-3 col-12 col-md-6">
-                        <label class="form-label">Phone number:</label>
-                        <form:input
-                          type="text"
-                          class="form-control"
-                          path="phone"
-                        />
-                      </div>
+                    <div class="mb-3 col-12 col-md-6">
+                      <label class="form-label">Phone number:</label>
+                      <form:input
+                        type="text"
+                        class="form-control"
+                        path="phone"
+                      />
                     </div>
 
-                    <div class="mb-3">
-                      <div class="mb-3 col-12 col-md-6">
-                        <label class="form-label">Full Name:</label>
-                        <form:input
-                          type="text"
-                          class="form-control"
-                          path="fullName"
-                        />
-                      </div>
+                    <div class="mb-3 col-12 col-md-6">
+                      <label class="form-label">Full Name:</label>
+                      <form:input
+                        type="text"
+                        class="form-control"
+                        path="fullName"
+                      />
                     </div>
 
-                    <div class="mb-3">
-                      <div class="mb-3 col-12 col-md-6">
-                        <label class="form-label">Address:</label>
-                        <form:input
-                          type="text"
-                          class="form-control"
-                          path="address"
-                        />
-                      </div>
+                    <div class="mb-3 col-12 col-md-6">
+                      <label class="form-label">Address:</label>
+                      <form:input
+                        type="text"
+                        class="form-control"
+                        path="address"
+                      />
                     </div>
 
                     <div class="mb-3 col-12 col-md-6">
                       <label class="form-label">Role:</label>
-                      <select class="form-select">
-                        <option value="ADMIN">ADMIN</option>
-                        <option value="USER">USER</option>
-                      </select>
+                      <form:select class="form-select" path="role.name">
+                        <form:option value="ADMIN">ADMIN</form:option>
+                        <form:option value="USER">USER</form:option>
+                      </form:select>
                     </div>
 
                     <div class="mb-3 col-12 col-md-6">
-                      <label for="avatarFIle" class="form-label">Avatar:</label>
+                      <label for="avatarFile" class="form-label">Avatar:</label>
                       <input
                         class="form-control"
                         type="file"
                         id="avatarFile"
                         accept=".png, .jpg, .jpeg"
+                        name="duckuroFile"
                       />
                     </div>
 
@@ -149,8 +141,6 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
                         Create
                       </button>
                     </div>
-
-                    <br />
                   </form:form>
                 </div>
               </div>

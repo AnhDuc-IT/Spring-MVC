@@ -29,9 +29,19 @@ public class User {
     private Role role;
     @OneToMany(mappedBy = "user")
     List<Order> orders;
-    public long getId(){
+
+    public Role getRole() {
+        return role;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public long getId() {
         return this.id;
     }
+
     public String getEmail() {
         return email;
     }
@@ -82,6 +92,14 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     @Override
