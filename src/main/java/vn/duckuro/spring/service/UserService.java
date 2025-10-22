@@ -1,10 +1,13 @@
 package vn.duckuro.spring.service;
 
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
+import vn.duckuro.spring.domain.Product;
 import vn.duckuro.spring.domain.Role;
 import vn.duckuro.spring.domain.User;
+import vn.duckuro.spring.repository.ProductRepository;
 import vn.duckuro.spring.repository.RoleRepository;
 import vn.duckuro.spring.repository.UserRepository;
 
@@ -12,10 +15,13 @@ import vn.duckuro.spring.repository.UserRepository;
 public class UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final ProductRepository productRepository;
 
-    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
+    public UserService(UserRepository userRepository, RoleRepository roleRepository,
+            ProductRepository productRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.productRepository = productRepository;
     }
 
     public String handleHello() {
@@ -44,6 +50,6 @@ public class UserService {
     }
 
     public Role getRoleByName(String name) {
-        return this.roleRepository.findByName(name);
+        return this.roleRepository.findFirstByName(name);
     }
 }

@@ -3,11 +3,16 @@ package vn.duckuro.spring.controller.admin;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.validation.Valid;
+
 import java.util.*;
 
 import vn.duckuro.spring.domain.User;
@@ -47,11 +52,18 @@ public class UserController {
     }
 
     @PostMapping(value = "/admin/user/create")
-    public String createUserPage(Model model, @ModelAttribute("newUser") User res,
+    public String createUserPage(Model model, @ModelAttribute("newUser") @Valid User res,
+            BindingResult newUserbindingResult,
             @RequestParam("duckuroFile") MultipartFile file) {
+        List<FieldError> errors = newUserbindingResult.getFieldErrors();
+        for (FieldError error : errors) {
+            System.out.println(error.getField() + " - " + error.getDefaultMessage());
+        }
+        if (newUserbindingResult.hasErrors()) {
+            return "/admin/user/create"; // không return redirect vì refresh lại => mất dữ liệu
+        }
         String avatar = this.uploadService.handleSaveUploadFile(file, "avatar");
         String hashPassword = this.passwordEncoder.encode(res.getPassword());
-        System.out.println(hashPassword);
         res.setAvatar(avatar);
         res.setPassword(hashPassword);
         res.setRole(this.userService.getRoleByName(res.getRole().getName()));
