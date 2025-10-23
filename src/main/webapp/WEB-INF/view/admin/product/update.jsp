@@ -54,16 +54,20 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
             <div class="container mt-5">
               <div class="row">
                 <div class="col-md-6 col-12 mx-auto">
-                  <h1 style="color: rgb(23, 59, 158)">THÊM MỚI SẢN PHẨM</h1>
+                  <h1 style="color: rgb(23, 59, 158)">CẬP NHẬT SẢN PHẨM</h1>
                   <hr />
 
                   <form:form
                     method="post"
-                    action="/admin/product/create"
+                    action="/admin/product/update"
                     modelAttribute="newProduct"
                     class="row"
                     enctype="multipart/form-data"
                   >
+                    <div class="mb-3" style="display: none">
+                      <label class="form-label">ID:</label>
+                      <form:input type="text" class="form-control" path="id" />
+                    </div>
                     <div class="mb-3 col-12 col-md-6">
                       <c:set var="errorname">
                         <form:errors path="name" cssClass="invalid-feedback" />
@@ -161,6 +165,7 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
                       </form:select>
                     </div>
                     <div class="mb-3 col-12 col-md-6">
+                      <form:hidden path="photo" />
                       <label for="avatarFile" class="form-label"
                         >Hình ảnh:</label
                       >
@@ -172,6 +177,7 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
                         name="duckuroFile"
                       />
                     </div>
+
                     <div class="col-12 mb-3">
                       <img
                         style="max-height: 250px; display: none"
@@ -182,7 +188,7 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
 
                     <div class="col-12 mb-5">
                       <button type="submit" class="btn btn-primary">
-                        Thêm
+                        Cập Nhật
                       </button>
                     </div>
                   </form:form>
