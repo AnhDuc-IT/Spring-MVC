@@ -145,7 +145,9 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <div class="row g-4">
                     <c:forEach var="product" items="${products}">
                       <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="rounded position-relative fruite-item">
+                        <div
+                          class="rounded position-relative fruite-item h-100 d-flex flex-column"
+                        >
                           <div class="fruite-img">
                             <img
                               src="/images/product/${product.photo}"
@@ -160,18 +162,33 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                             Laptop
                           </div>
                           <div
-                            class="p-4 border border-secondary border-top-0 rounded-bottom"
+                            class="p-4 border border-secondary border-top-0 rounded-bottom d-flex flex-column flex-grow-1"
                           >
-                            <h4 style="font-size: 30px">
+                            <h4
+                              style="
+                                font-size: 18px;
+                                min-height: 40px;
+                                overflow: hidden;
+                              "
+                              class="text-truncate"
+                            >
                               <a href="/product/${product.id}">
                                 ${product.name}
                               </a>
                             </h4>
-                            <p style="font-size: 13px">${product.shortDesc}</p>
-                            <div class="d-flex flex-lg-wrap">
+                            <p
+                              style="
+                                font-size: 13px;
+                                min-height: 30px;
+                                overflow: hidden;
+                              "
+                            >
+                              ${product.shortDesc}
+                            </p>
+                            <div class="d-flex flex-column mt-auto">
                               <p
                                 style="
-                                  font-size: 15px;
+                                  font-size: 18px; /* Tăng size giá */
                                   text-align: center;
                                   width: 100%;
                                 "

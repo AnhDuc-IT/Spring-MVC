@@ -35,7 +35,7 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
               >3</span
             >
           </a>
-          <a href="#" class="my-auto">
+          <a href="/login" class="my-auto">
             <i class="fas fa-user fa-2x"></i>
           </a>
         </div>
