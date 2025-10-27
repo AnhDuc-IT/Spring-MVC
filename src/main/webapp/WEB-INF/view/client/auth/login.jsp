@@ -39,6 +39,23 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="client/css/util.css" />
     <link rel="stylesheet" type="text/css" href="client/css/main.css" />
+    <style>
+      .wrap-input100 { margin-bottom: 5px !important; }
+      .container-login100-form-btn { margin-top: 8px !important; }
+      .text-center.p-t-12 { padding-top: 8px !important; }
+      .text-center.p-t-136 { padding-top: 40px !important; }
+      .login100-form-title { 
+        font-size: 30px !important;
+        font-weight: 600 !important;
+        padding-bottom: 35px !important;
+      }
+      .input100 {
+        padding: 0 0px 0 55px !important;
+      }
+      .symbol-input100 {
+        padding-left: 25px !important;
+      }
+    </style>
     <!--===============================================================================================-->
   </head>
   <body>
@@ -46,7 +63,7 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
       <div class="container-login100">
         <div class="wrap-login100">
           <div class="login100-pic js-tilt" data-tilt>
-            <img src="client/img/img-01.png" alt="IMG" />
+            <img src="client/img/img-01.jpg" alt="IMG" />
           </div>
 
           <form class="login100-form validate-form">
@@ -91,8 +108,8 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
             <div class="text-center p-t-12">
               <a class="txt2" href="#"> Quên mật khẩu? </a>
             </div>
-            <div class="text-center p-t-136">
-              <h4>Bạn chưa có tài khoản?</h4>
+            <div class="text-center p-t-40">
+              <h5 class="mb-2">Bạn chưa có tài khoản?</h5>
               <a class="txt2" href="/register">
                 Đăng kí tài khoản
                 <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
