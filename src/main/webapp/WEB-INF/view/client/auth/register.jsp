@@ -41,12 +41,12 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
       media="all"
     />
 
-    <!-- Main CSS-->
-    <link href="/client/css/register.css" rel="stylesheet" media="all" />
+  <!-- Main CSS-->
+  <link href="<c:url value='/client/css/register.css'/>" rel="stylesheet" media="all" />
   </head>
 
-  <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <body>
+    <div class="page-wrapper bg-gra-02 font-poppins">
       <div class="wrapper wrapper--w680">
         <div class="card card-4">
           <div class="card-body">
@@ -57,9 +57,9 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
               method="post"
               action="/register"
               modelAttribute="newUser"
-              class="row"
               enctype="multipart/form-data"
             >
+              <!-- First row: Email and Full Name -->
               <div class="row row-space">
                 <div class="col-2">
                   <div class="input-group">
@@ -86,6 +86,7 @@ uri="http://www.springframework.org/tags/form" prefix="form" %>
                 </div>
               </div>
 
+              <!-- Second row: Phone and Password -->
               <div class="row row-space">
                 <div class="col-2">
                   <div class="input-group">
