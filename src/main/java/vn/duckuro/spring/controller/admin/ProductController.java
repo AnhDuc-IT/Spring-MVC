@@ -1,22 +1,22 @@
 package vn.duckuro.spring.controller.admin;
 
 import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import vn.duckuro.spring.domain.Product;
-import vn.duckuro.spring.domain.User;
-import vn.duckuro.spring.service.ProductService;
-import vn.duckuro.spring.service.UploadService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.validation.Valid;
+import vn.duckuro.spring.domain.Product;
+import vn.duckuro.spring.service.ProductService;
+import vn.duckuro.spring.service.UploadService;
 
 @Controller
 public class ProductController {
@@ -28,7 +28,7 @@ public class ProductController {
         this.uploadService = uploadService;
     }
 
-    @GetMapping("/admin/product")
+    @GetMapping({"/admin/product", "/admin/product/"})
     public String getProduct(Model model) {
         List<Product> arr = this.productService.getAllProducts();
         model.addAttribute("products", arr);

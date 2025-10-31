@@ -77,8 +77,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       </div>
     </div>
     <jsp:include page="../layout/banner.jsp" />
-    <jsp:include page="../layout/feature.jsp" />
-
+    
     <div class="container-fluid fruite py-5">
       <div class="container py-5">
         <div class="tab-class text-center">
@@ -199,13 +198,15 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                                   value="${product.price}"
                                 />đ
                               </p>
-                              <a
-                                href="#"
-                                class="mx-auto btn border border-secondary rounded-pill px-3 text-primary"
+                              <form action="/cart/add" method="post" style="display:inline">
+                                <input type="hidden" name="productId" value="${product.id}" />
+                                <button type="submit"
+                                  class="mx-auto btn border border-secondary rounded-pill px-3 text-primary"
                                 ><i
                                   class="fa fa-shopping-bag me-2 text-primary"
                                 ></i>
-                                Thêm vào giỏ hàng</a
+                                Thêm vào giỏ hàng</button>
+                              </form>
                               >
                             </div>
                           </div>
@@ -224,6 +225,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         </div>
       </div>
     </div>
+    <jsp:include page="../layout/feature.jsp" />
     <jsp:include page="../layout/footer.jsp" />
 
     <a

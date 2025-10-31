@@ -45,7 +45,7 @@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
       <script
-      src="js/scripts.js"
+  src="/resources/js/scripts.js"
     ></script>
   </body>
 </html>
